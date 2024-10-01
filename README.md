@@ -3,6 +3,7 @@
 ## Setup environment
 
 ```
+cd dashboard
 pip install scipy numpy pandas matplotlib streamlit
 ```
 
