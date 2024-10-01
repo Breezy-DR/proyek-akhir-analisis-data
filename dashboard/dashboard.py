@@ -1,9 +1,12 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+path = Path(__file__).parent / "dashboard/main_data.csv"
 
 # Baca dan Olah Data
-bicycle_df_day = pd.read_csv('main_data.csv') 
+bicycle_df_day = pd.read_csv(path) 
 bicycle_df_day['dteday'] = pd.to_datetime(bicycle_df_day['dteday'])
 bicycle_df_day['year_month'] = bicycle_df_day['dteday'].dt.to_period('M')
 bicycle_df_day['season'] = bicycle_df_day['season'].map({1: 'springer', 2: 'summer', 3: 'fall', 4: 'winter'})
